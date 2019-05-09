@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select molecule tests Render simple select 1`] = `
+<div
+  className="sc-bwzfXH bszZAY"
+>
+  <label
+    className="sc-htpNat brBYsh"
+  >
+    Label Text
+  </label>
+  <select
+    className="sc-bdVaJa jHHhRH"
+  >
+    <option
+      disabled={true}
+      selected={true}
+      value="select-value"
+    >
+      -- Select --
+    </option>
+    <option
+      value="a_high"
+    >
+      A high priority item
+    </option>
+    <option
+      value="b_medium"
+    >
+      A medium priority item
+    </option>
+    <option
+      value="c_low"
+    >
+      A low priority item
+    </option>
+  </select>
+</div>
+`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox Toggle box 1`] = `
+<input
+  checked={true}
+  onChange={[Function]}
+  type="checkbox"
+/>
+`;
+
+exports[`CheckBox Toggle box 2`] = `
+<input
+  checked={false}
+  onChange={[Function]}
+  type="checkbox"
+/>
+`;

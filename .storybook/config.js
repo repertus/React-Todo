@@ -13,6 +13,8 @@ function loadStories() {
   require('../src/atomic.ui/atoms/Label/index.story');
   require('../src/atomic.ui/molecules/Task/index.story');
   require('../src/atomic.ui/molecules/TaskPriority/index.story');
+  require('../src/atomic.ui/molecules/TaskType/index.story');
+  require('../src/atomic.ui/organisms/TaskForm/index.story');
 }
 
 configure(loadStories, module);

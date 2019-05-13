@@ -31,7 +31,7 @@ Select.propTypes = {
   text: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.string,
+      value: PropTypes.any,
       text: PropTypes.string,
     })
   ),

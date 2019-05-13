@@ -14,7 +14,6 @@ exports[`Select molecule tests Render simple select 1`] = `
   >
     <option
       disabled={true}
-      selected={true}
       value="select-value"
     >
       -- Select --

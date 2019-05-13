@@ -12,6 +12,7 @@ function loadStories() {
   require('../src/atomic.ui/atoms/Checkbox/index.story');
   require('../src/atomic.ui/atoms/Label/index.story');
   require('../src/atomic.ui/molecules/Task/index.story');
+  require('../src/atomic.ui/molecules/TaskPriority/index.story');
 }
 
 configure(loadStories, module);

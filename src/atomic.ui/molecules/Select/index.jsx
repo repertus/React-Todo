@@ -13,7 +13,7 @@ class Select extends PureComponent {
       <DivStyling>
         <Label text={text} />
         <SelectStyling>
-          <option disabled value="select-value" selected>
+          <option disabled value="select-value">
             -- Select --
           </option>
           {options.map(opt => (

@@ -1,5 +1,13 @@
 {
   "extends": [
-    "wesbos"
-  ]
+    "wesbos",
+    "prettier/flowtype"
+  ],
+  "plugins": [
+    "flowtype"
+  ],
+  "rules": {
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1
+  }
 }

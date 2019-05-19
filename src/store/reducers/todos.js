@@ -1,21 +1,17 @@
-import {
-  ADD_TODO,
-  DELETE_TODO,
-  GET_TODOS,
-  UPDATE_TODO,
-} from '../actions/types';
+// @flow
+import { Action, State, Todo } from '../types';
 
-const todos = (state = [], action) => {
+const todos = (state: State = [], action: Action) => {
   switch (action.type) {
-    case ADD_TODO:
+    case 'ADD_TODO':
       return [...state, action.payload];
-    case DELETE_TODO:
+    case 'DELETE_TODO':
       return state.filter(todo => todo._id !== action.payload._id);
-    case GET_TODOS:
+    case 'GET_TODOS':
       return action.todos;
-    case UPDATE_TODO:
+    case 'UPDATE_TODO':
       return state
-        .filter(todo => todo._id !== action.payload._id)
+        .filter((todo: Todo) => todo._id !== action.payload._id)
         .push(action.payload);
     default:
       return state;

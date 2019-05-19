@@ -1,12 +1,13 @@
+// @flow
 import axios from 'axios';
-import { ADD_TODO, DELETE_TODO, GET_TODOS, UPDATE_TODO } from './types';
+import { Todo, Action, ThunkAction } from '../types';
 
 const instance = axios.create({
   baseURL: 'http://localhost:3000/api',
 });
 
-export const addTodoSuccess = todo => ({
-  type: ADD_TODO,
+export const addTodoSuccess = (todo: Todo): Action => ({
+  type: 'ADD_TODO',
   payload: {
     _id: todo._id,
     task: todo.task,
@@ -16,20 +17,20 @@ export const addTodoSuccess = todo => ({
   },
 });
 
-export const deleteTodoSuccess = todo => ({
-  type: DELETE_TODO,
+export const deleteTodoSuccess = (todo: Todo): Action => ({
+  type: 'DELETE_TODO',
   payload: {
     _id: todo._id,
   },
 });
 
-export const getTodosSuccess = todos => ({
-  type: GET_TODOS,
+export const getTodosSuccess = (todos: Array<Todo>): Action => ({
+  type: 'GET_TODOS',
   todos,
 });
 
-export const updateTodoSuccess = todo => ({
-  type: UPDATE_TODO,
+export const updateTodoSuccess = (todo: Todo): Action => ({
+  type: 'UPDATE_TODO',
   payload: {
     _id: todo._id,
     task: todo.task,
@@ -39,7 +40,7 @@ export const updateTodoSuccess = todo => ({
   },
 });
 
-export const addTodo = todo => dispatch => {
+export const addTodo = (todo: Todo): ThunkAction => dispatch => {
   instance
     .post('/todos', todo)
     .then(response => {
@@ -50,7 +51,7 @@ export const addTodo = todo => dispatch => {
     });
 };
 
-export const deleteTodo = todo => dispatch => {
+export const deleteTodo = (todo: Todo): ThunkAction => dispatch => {
   instance
     .delete(`/todos/${todo._id}`)
     .then(() => {
@@ -61,8 +62,7 @@ export const deleteTodo = todo => dispatch => {
     });
 };
 
-export const getTodos = () => dispatch => {
-  debugger;
+export const getTodos = (): ThunkAction => dispatch => {
   instance
     .get('/todos')
     .then(response => {
@@ -73,7 +73,7 @@ export const getTodos = () => dispatch => {
     });
 };
 
-export const updateTodo = todo => dispatch => {
+export const updateTodo = (todo: Todo): ThunkAction => dispatch => {
   instance
     .put(`todos/${todo._id}`, todo)
     .then(response => {

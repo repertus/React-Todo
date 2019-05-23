@@ -1,22 +1,22 @@
+// @flow
 import React, { PureComponent } from 'react';
-import { string } from 'prop-types';
 
 import { ButtonStyling } from './index.styling';
 
-class Button extends PureComponent {
+type Props = {
+  title?: string,
+};
+
+class Button extends PureComponent<Props> {
+  static defaultProps = {
+    title: 'Hello',
+  };
+
   render() {
     const { title } = this.props;
 
     return <ButtonStyling>{title}</ButtonStyling>;
   }
 }
-
-Button.propTypes = {
-  title: string,
-};
-
-Button.defaultProps = {
-  title: '',
-};
 
 export default Button;

@@ -1,8 +1,20 @@
+// @flow
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 
-class CheckBox extends PureComponent {
-  constructor(props) {
+type Props = {
+  initStatus?: boolean,
+};
+
+type State = {
+  checked?: boolean,
+};
+
+class CheckBox extends PureComponent<Props, State> {
+  static defaultProps = {
+    initStatus: true,
+  };
+
+  constructor(props: any) {
     super(props);
 
     const { initStatus } = this.props;
@@ -14,7 +26,7 @@ class CheckBox extends PureComponent {
     this.handleCheckBoxChange = this.handleCheckBoxChange.bind(this);
   }
 
-  handleCheckBoxChange = event => {
+  handleCheckBoxChange = (event: SyntheticEvent<HTMLInputElement>): void => {
     this.setState({ checked: event.target.checked });
   };
 
@@ -30,13 +42,5 @@ class CheckBox extends PureComponent {
     );
   }
 }
-
-CheckBox.propTypes = {
-  initStatus: PropTypes.bool,
-};
-
-CheckBox.defaultProps = {
-  initStatus: true,
-};
 
 export default CheckBox;

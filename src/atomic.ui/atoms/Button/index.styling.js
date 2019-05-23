@@ -31,7 +31,7 @@ export const ButtonStyling = styled.button`
     border-color: #204d74;
   }
 
-  &::active:focus {
+  &:active:focus {
     color: #fff;
     background-color: #286090;
     border-color: #122b40;
